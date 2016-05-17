@@ -12,13 +12,12 @@
 {% editable page.gallery.content %}
 {{ page.gallery.content|richtext_filters|safe }}
 {% endeditable %}
-<h2>Hello World</h2>
 <div class="gallery row">
 {% with page.gallery.images.all as images %}
 {% for image in images %}
 <div class="col-xs-4 col-sm-3">
     <a class="thumbnail" rel="#image-{{ image.id }}" title="{{ image.description }}" href="{{ image.file.url }}">
-        <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail image.file 131 75 %}">
+        <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail image.file 325 325 %}">
     </a>
 </div>
 {% endfor %}
