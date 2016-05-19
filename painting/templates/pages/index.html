@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% load mezzanine_tags %}
+
+{% block breadcrumb_menu %}
+{% endblock %}
+
+{% block main %}
+
+{{ page.richtextpage.content|richtext_filters|safe }}
+{% blocktrans %}
+{% endblocktrans %}
+{% endblock %}
