@@ -221,6 +221,7 @@ INSTALLED_APPS = (
     "mezzanine.blog",
     "mezzanine.forms",
     "mezzanine.galleries",
+    "crispy_forms",
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -285,6 +286,10 @@ OPTIONAL_APPS = (
     PACKAGE_NAME_GRAPPELLI,
 )
 
+
+# Custsom #
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 ##################
 # LOCAL SETTINGS #
 ##################
