@@ -1,5 +1,5 @@
 {% extends "pages/page.html" %}
-{% load crispy_forms_tags %}
+
 {% load mezzanine_tags i18n %}
 
 {% block main %}
@@ -18,19 +18,21 @@
     {% errors_for form %}
 
     <form class="mezzanine-form" method="post"{% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
-            
-        {% crispy form %}
-        <input class="btn btn-primary btn-lg" type="submit"
-                value="{% if page.form.button_text %}{{ page.form.button_text }}{% else %}{% trans "Submit" %}{% endif %}">
+        {% fields_for form %}
+        <button class="btn btn-danger pull-right btn-lg" type="submit">
+                <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+            {% if page.form.button_text %}{{ page.form.button_text }}{% else %}{% trans "Submit" %}{% endif %}
+            </button>
     </form>
 {% endif %}
 
 {% endblock %}
 
-hellpo
+
 {% block extra_js %}
 {{ block.super }}
 <script>
 $(function() {$('.mezzanine-form :input:visible:enabled:first').focus();});
 </script>
 {% endblock %}
+
