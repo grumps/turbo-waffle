@@ -1,0 +1,11 @@
+{% load i18n pages_tags %}
+{% spaceless %}
+    {% for page in page_branch %} 
+        {% if page.is_current and page.content_model == 'gallery' %}
+            <a href="/contact/" type="button" class="btn btn-default navbar-btn pull-right">Check Availability</a>
+        {% elif page.is_current and page.content_model != 'gallery' %}
+            <a href="/contact/" type="button" class="btn btn-default navbar-btn pull-right">Get In Touch</a>
+        {% endif %}            
+    {% endfor %}
+
+{% endspaceless %}
